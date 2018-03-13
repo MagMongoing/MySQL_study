@@ -1,7 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-* [14. innodb存储引擎 ](chapter1/README.md)
+* [14 innodb存储引擎 ](chapter1/README.md)
     * [14.1 innodb引擎的介绍](chapter1/sinnodb引擎的介绍.md)
         * [14.1.1 使用innodb引擎表的好处](chapter1/使用innodb引擎表的好处.md)
         * [14.1.2 innodb引擎表的最佳实践](chapter1/innodb引擎表的最佳实践.md)
