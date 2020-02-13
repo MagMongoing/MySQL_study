@@ -1,0 +1,1632 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>15.1 innodb引擎的介绍 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="15.1.1.html" />
+    
+    
+    <link rel="prev" href="15.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../5/5.html">
+            
+                <a href="../5/5.html">
+            
+                    
+                    5. MySQL服务器管理 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../5/5.1.html">
+            
+                <a href="../5/5.1.html">
+            
+                    
+                    5.1 MySQL服务器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../5/5.1.1.html">
+            
+                <a href="../5/5.1.1.html">
+            
+                    
+                    5.1.1 配置服务器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../5/5.1.2.html">
+            
+                <a href="../5/5.1.2.html">
+            
+                    
+                    5.1.2 服务器的默认配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../5/5.1.3.html">
+            
+                <a href="../5/5.1.3.html">
+            
+                    
+                    5.1.3 服务器选项和参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../5/5.1.4.html">
+            
+                <a href="../5/5.1.4.html">
+            
+                    
+                    5.1.4 服务器命令行选项
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="../5/5.1.5.html">
+            
+                <a href="../5/5.1.5.html">
+            
+                    
+                    5.1.5 服务器系统变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" data-path="../5/5.1.6.html">
+            
+                <a href="../5/5.1.6.html">
+            
+                    
+                    5.1.6 系统变量的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7" data-path="../5/5.1.7.html">
+            
+                <a href="../5/5.1.7.html">
+            
+                    
+                    5.1.7 服务器的状态变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.8" data-path="../5/5.1.8.html">
+            
+                <a href="../5/5.1.8.html">
+            
+                    
+                    5.1.8 服务器的SQL Modes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.9" data-path="../5/5.1.9.html">
+            
+                <a href="../5/5.1.9.html">
+            
+                    
+                    5.1.9 IPV6支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.10" data-path="../5/5.1.10.html">
+            
+                <a href="../5/5.1.10.html">
+            
+                    
+                    5.1.10 服务器时区支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.11" data-path="../5/5.1.11.html">
+            
+                <a href="../5/5.1.11.html">
+            
+                    
+                    5.1.11 服务器侧帮助信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.12" data-path="../5/5.1.12.html">
+            
+                <a href="../5/5.1.12.html">
+            
+                    
+                    5.1.12 服务器对信号的响应
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.13" data-path="../5/5.1.13.html">
+            
+                <a href="../5/5.1.13.html">
+            
+                    
+                    5.1.13 服务器的关闭过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../5/5.2.html">
+            
+                <a href="../5/5.2.html">
+            
+                    
+                    5.2 MySQL数据目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../5/5.3.html">
+            
+                <a href="../5/5.3.html">
+            
+                    
+                    5.3 mysql系统数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../5/5.4.html">
+            
+                <a href="../5/5.4.html">
+            
+                    
+                    5.4 MySQL服务层日志
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../5/5.4.1.html">
+            
+                <a href="../5/5.4.1.html">
+            
+                    
+                    5.4.1 全量查询日志和慢查询日志的输出方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../5/5.4.2.html">
+            
+                <a href="../5/5.4.2.html">
+            
+                    
+                    5.4.2 错误日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="../5/5.4.3.html">
+            
+                <a href="../5/5.4.3.html">
+            
+                    
+                    5.4.3 全量查询日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.4" data-path="../5/5.4.4.html">
+            
+                <a href="../5/5.4.4.html">
+            
+                    
+                    5.4.4 二进制日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.5" data-path="../5/5.4.5.html">
+            
+                <a href="../5/5.4.5.html">
+            
+                    
+                    5.4.5 慢查询日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.6" data-path="../5/5.4.6.html">
+            
+                <a href="../5/5.4.6.html">
+            
+                    
+                    5.4.6 DDL日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.7" data-path="../5/5.4.7.html">
+            
+                <a href="../5/5.4.7.html">
+            
+                    
+                    5.4.7 服务器层日志的维护
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../5/5.5.html">
+            
+                <a href="../5/5.5.html">
+            
+                    
+                    5.5 MySQL Server插件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../5/5.5.1.html">
+            
+                <a href="../5/5.5.1.html">
+            
+                    
+                    5.5.1 插件安装与卸载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" data-path="../5/5.5.2.html">
+            
+                <a href="../5/5.5.2.html">
+            
+                    
+                    5.5.2 获取服务器插件信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" data-path="../5/5.5.3.html">
+            
+                <a href="../5/5.5.3.html">
+            
+                    
+                    5.5.3 MySQL企业版连接池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.4" data-path="../5/5.5.4.html">
+            
+                <a href="../5/5.5.4.html">
+            
+                    
+                    5.5.4 查询语句重写插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.5" data-path="../5/5.5.5.html">
+            
+                <a href="../5/5.5.5.html">
+            
+                    
+                    5.5.5 版本令牌
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../5/5.6.html">
+            
+                <a href="../5/5.6.html">
+            
+                    
+                    5.6 MySQL多实例
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1" data-path="../5/5.6.1.html">
+            
+                <a href="../5/5.6.1.html">
+            
+                    
+                    5.6.1 创建多实例数据目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.2" data-path="../5/5.6.2.html">
+            
+                <a href="../5/5.6.2.html">
+            
+                    
+                    5.6.2 windows运行多实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.3" data-path="../5/5.6.3.html">
+            
+                <a href="../5/5.6.3.html">
+            
+                    
+                    5.6.3 Unix运行多实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.4" data-path="../5/5.6.4.html">
+            
+                <a href="../5/5.6.4.html">
+            
+                    
+                    5.6.4 多服务环境中使用客户端程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../5/5.7.html">
+            
+                <a href="../5/5.7.html">
+            
+                    
+                    5.7 使用Dtrace跟踪mysqld
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.7.1" data-path="../5/5.7.1.html">
+            
+                <a href="../5/5.7.1.html">
+            
+                    
+                    5.7.1 mysqld Dtrace追踪参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../6/6.html">
+            
+                <a href="../6/6.html">
+            
+                    
+                    6. 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../13/13.html">
+            
+                <a href="../13/13.html">
+            
+                    
+                    13 SQL Statements
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../13/13.1.html">
+            
+                <a href="../13/13.1.html">
+            
+                    
+                    13.1 DDL语句
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../13/13.1.34.html">
+            
+                <a href="../13/13.1.34.html">
+            
+                    
+                    13.1.34 TRUNCATE TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../13/13.2.html">
+            
+                <a href="../13/13.2.html">
+            
+                    
+                    13.2 DML语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../13/13.3.html">
+            
+                <a href="../13/13.3.html">
+            
+                    
+                    13.3 事务与锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../13/13.4.html">
+            
+                <a href="../13/13.4.html">
+            
+                    
+                    13.4 复制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="../13/13.4.1.html">
+            
+                <a href="../13/13.4.1.html">
+            
+                    
+                    13.4.1 Master
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2" data-path="../13/13.4.2.html">
+            
+                <a href="../13/13.4.2.html">
+            
+                    
+                    13.4.2 Slave
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.2.1" data-path="../13/13.4.2.1.html">
+            
+                <a href="../13/13.4.2.1.html">
+            
+                    
+                    13.4.2.1 Change master to 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2.2" data-path="../13/13.4.2.2.html">
+            
+                <a href="../13/13.4.2.2.html">
+            
+                    
+                    13.4.2.2 Change replication filter 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2.3" data-path="../13/13.4.2.3.html">
+            
+                <a href="../13/13.4.2.3.html">
+            
+                    
+                    13.4.2.3 MASTER_POS_WAIT() 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2.4" data-path="../13/13.4.2.3.html">
+            
+                <a href="../13/13.4.2.3.html">
+            
+                    
+                    13.4.2.4 Reset slave 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2.5" data-path="../13/13.4.2.3.html">
+            
+                <a href="../13/13.4.2.3.html">
+            
+                    
+                    13.4.2.5 SET GLOBAL sql_slave_skip_counter 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2.6" data-path="../13/13.4.2.6.html">
+            
+                <a href="../13/13.4.2.6.html">
+            
+                    
+                    13.4.2.6 START SLAVE 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2.7" data-path="../13/13.4.2.6.html">
+            
+                <a href="../13/13.4.2.6.html">
+            
+                    
+                    13.4.2.7 STOP SLAVE 
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.3" data-path="../13/13.4.3.html">
+            
+                <a href="../13/13.4.3.html">
+            
+                    
+                    13.4.3 Group Replication
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="15.html">
+            
+                <a href="15.html">
+            
+                    
+                    15 innodb存储引擎 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.5.1" data-path="15.1.html">
+            
+                <a href="15.1.html">
+            
+                    
+                    15.1 innodb引擎的介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="15.1.1.html">
+            
+                <a href="15.1.1.html">
+            
+                    
+                    15.1.1 使用innodb引擎表的优势
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="15.1.2.html">
+            
+                <a href="15.1.2.html">
+            
+                    
+                    15.1.2 innodb引擎表的最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" data-path="15.1.3.html">
+            
+                <a href="15.1.3.html">
+            
+                    
+                    15.1.3 innodb为默认存储引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.4" data-path="15.1.4.html">
+            
+                <a href="15.1.4.html">
+            
+                    
+                    15.1.4 使用innodb进行基准测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="15.2.html">
+            
+                <a href="15.2.html">
+            
+                    
+                    15.2 innodb与ACID特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="15.3.html">
+            
+                <a href="15.3.html">
+            
+                    
+                    15.3 Innodb多版本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="15.4.html">
+            
+                <a href="15.4.html">
+            
+                    
+                    15.4 Innodb架构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="15.4.1.html">
+            
+                <a href="15.4.1.html">
+            
+                    
+                    15.4.1 Buffer Pool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.2" data-path="15.4.2.html">
+            
+                <a href="15.4.2.html">
+            
+                    
+                    15.4.2 Change Buffer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.3" data-path="15.4.3.html">
+            
+                <a href="15.4.3.html">
+            
+                    
+                    15.4.3 自适应哈希索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.4" data-path="15.4.4.html">
+            
+                <a href="15.4.4.html">
+            
+                    
+                    15.4.4 Redo Log Buffer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.5" data-path="15.4.5.html">
+            
+                <a href="15.4.5.html">
+            
+                    
+                    15.4.5 系统表空间
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.6" data-path="15.4.6.html">
+            
+                <a href="15.4.6.html">
+            
+                    
+                    15.4.6 Doublewrite Buffer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.7" data-path="15.4.7.html">
+            
+                <a href="15.4.7.html">
+            
+                    
+                    15.4.7 Undo Log
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.8" data-path="15.4.8.html">
+            
+                <a href="15.4.8.html">
+            
+                    
+                    15.4.8 独立表空间
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.9" data-path="15.4.9.html">
+            
+                <a href="15.4.9.html">
+            
+                    
+                    15.4.9 General Tablespaces
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.10" data-path="15.4.10.html">
+            
+                <a href="15.4.10.html">
+            
+                    
+                    15.4.10 Undo表空间
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.11" data-path="15.4.11.html">
+            
+                <a href="15.4.11.html">
+            
+                    
+                    15.4.11 临时表空间
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.12" data-path="15.4.12.html">
+            
+                <a href="15.4.12.html">
+            
+                    
+                    15.4.12 Redo Log
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="15.5.html">
+            
+                <a href="15.5.html">
+            
+                    
+                    15.5 Innodb锁和事物模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="15.6.html">
+            
+                <a href="15.6.html">
+            
+                    
+                    15.6 Innodb配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="15.7.html">
+            
+                <a href="15.7.html">
+            
+                    
+                    15.7 Innodb表空间
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="15.8.html">
+            
+                <a href="15.8.html">
+            
+                    
+                    15.8 Innodb表和索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="15.9.html">
+            
+                <a href="15.9.html">
+            
+                    
+                    15.9 Innodb压缩表和页
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="15.10.html">
+            
+                <a href="15.10.html">
+            
+                    
+                    15.10 Innodb行存储和格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="15.11.html">
+            
+                <a href="15.11.html">
+            
+                    
+                    15.11 Innodb磁盘I/O和文件空间管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="15.12.html">
+            
+                <a href="15.12.html">
+            
+                    
+                    15.12 Innodb在线DDL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13" data-path="15.13.html">
+            
+                <a href="15.13.html">
+            
+                    
+                    15.13 Innodb启动选项及系统参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14" data-path="15.14.html">
+            
+                <a href="15.14.html">
+            
+                    
+                    15.14 Innodb INFORMATION_SCHEMA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15" data-path="15.15.html">
+            
+                <a href="15.15.html">
+            
+                    
+                    15.15 Innodb Performance Schema集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.16" data-path="15.16.html">
+            
+                <a href="15.16.html">
+            
+                    
+                    15.16 Innodb Monitors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.17" data-path="15.17.html">
+            
+                <a href="15.17.html">
+            
+                    
+                    15.17 Innodb备份与恢复
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.18" data-path="15.18.html">
+            
+                <a href="15.18.html">
+            
+                    
+                    15.18 Innodb与复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.19" data-path="15.19.html">
+            
+                <a href="15.19.html">
+            
+                    
+                    15.19 Innodb memcached插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.20" data-path="15.20.html">
+            
+                <a href="15.20.html">
+            
+                    
+                    15.20 Innodb故障排除
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >15.1 innodb引擎的介绍</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="151-innodb&#x5F15;&#x64CE;&#x7684;&#x4ECB;&#x7ECD;">15.1 innodb&#x5F15;&#x64CE;&#x7684;&#x4ECB;&#x7ECD;</h1>
+<p><a href="15.1.1.html">15.1.1.&#x4F7F;&#x7528;innodb&#x7684;&#x597D;&#x5904;</a></p>
+<p><a href="15.1.2.html">15.1.2.innodb&#x8868;&#x6700;&#x4F73;&#x5B9E;&#x8DF5;</a></p>
+<p><a href="15.1.3.html">15.1.3.innodb&#x4E3A;&#x9ED8;&#x8BA4;&#x7684;&#x5B58;&#x50A8;&#x5F15;&#x64CE;</a></p>
+<p><a href="15.1.4.html">15.1.4.&#x4F7F;&#x7528;innodb&#x8FDB;&#x884C;&#x57FA;&#x51C6;&#x6D4B;&#x8BD5;</a></p>
+<p>Innodb&#x662F;&#x4E00;&#x6B3E;&#x901A;&#x7528;&#x7684;&#x9AD8;&#x53EF;&#x9760;&#x548C;&#x53EF;&#x6027;&#x80FD;&#x7684;&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x3002;&#x5728;8.0&#x7248;&#x672C;&#xFF0C;innodb&#x4E3A;&#x9ED8;&#x8BA4;&#x7684;&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x6307;&#x5B9A;&#x5176;&#x5B83;&#x5F15;&#x64CE;&#x4E3A;&#x9ED8;&#x8BA4;&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#xFF0C;&#x5728;&#x521B;&#x5EFA;&#x8868;&#x65F6;&#xFF0C;&#x4E0D;&#x6307;&#x5B9A;engine=&#xFF0C;&#x5219;&#x521B;&#x5EFA;&#x7684;&#x8868;&#x4E3A;innodb&#x8868;&#x3002;</p>
+<h2 id="innodb&#x7684;&#x4E3B;&#x8981;&#x4F18;&#x52BF;">Innodb&#x7684;&#x4E3B;&#x8981;&#x4F18;&#x52BF;</h2>
+<ul>
+<li>DML&#x64CD;&#x4F5C;&#x9075;&#x5FAA;ACID&#x7279;&#x6027;&#xFF0C;&#x4F7F;&#x7528;&#x4E8B;&#x52A1;&#x7684;&#x63D0;&#x4EA4;&#xFF0C;&#x56DE;&#x6EDA;&#xFF0C;&#x53CA;&#x5D29;&#x6E83;&#x6062;&#x590D;&#x529F;&#x80FD;&#x6765;&#x4FDD;&#x62A4;&#x7528;&#x6237;&#x6570;&#x636E;&#x3002;&#x66F4;&#x591A;&#x8BE6;&#x60C5;&#x53C2;&#x8003;<a href="15.2.html">15.2 Innodb&#x548C;ACID&#x7279;&#x6027;</a>&#x3002;</li>
+<li>&#x884C;&#x7EA7;&#x522B;&#x7684;&#x9501;&#x53CA;Oracle-style&#x4E00;&#x81F4;&#x6027;&#x8BFB;&#x63D0;&#x9AD8;&#x4E86;&#x591A;&#x7528;&#x6237;&#x5E76;&#x53D1;&#x6027;&#x80FD;&#x3002;&#x8BE6;&#x60C5;&#x53C2;&#x8003;<a href="15.5.html">15.5 Innodb&#x9501;&#x548C;&#x4E8B;&#x52A1;&#x6A21;&#x578B;</a>&#x3002;</li>
+<li>Innodb&#x4F7F;&#x7528;&#x4E3B;&#x952E;&#x6765;&#x7EC4;&#x7EC7;&#x6570;&#x636E;&#x5728;&#x78C1;&#x76D8;&#x4E0A;&#x7684;&#x5B58;&#x50A8;&#x4EE5;&#x4F18;&#x5316;&#x67E5;&#x8BE2;&#x64CD;&#x4F5C;&#x3002;&#x6BCF;&#x4E2A;innodb&#x8868;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x4E3B;&#x952E;&#x7D22;&#x5F15;&#xFF0C;&#x4E5F;&#x79F0;&#x805A;&#x7C07;&#x7D22;&#x5F15;&#xFF0C;&#x5176;&#x7EC4;&#x7EC7;&#x4E86;&#x6570;&#x636E;&#x5728;&#x78C1;&#x76D8;&#x7684;&#x5B58;&#x50A8;&#xFF0C;&#x53EF;&#x4EE5;&#x51CF;&#x5C11;&#x4F7F;&#x7528;&#x4E3B;&#x952E;&#x67E5;&#x8BE2;&#x65F6;&#x7684;I/O&#x64CD;&#x4F5C;&#x3002;&#x53C2;&#x8003;<a href="15.8.2.1.md">15.8.2.1 &#x805A;&#x7C07;&#x7D22;&#x5F15;&#x548C;&#x4E8C;&#x7EA7;&#x7D22;&#x5F15;</a>&#x3002;</li>
+<li>&#x5728;&#x7EF4;&#x6301;&#x6570;&#x636E;&#x7684;&#x5B8C;&#x6574;&#x6027;&#x65B9;&#x9762;&#xFF0C;innodb&#x652F;&#x6301;&#x5916;&#x952E;&#x7EA6;&#x675F;&#x3002;&#x4F7F;&#x7528;&#x5916;&#x952E;&#xFF0C;&#x63D2;&#x5165;&#xFF0C;&#x66F4;&#x65B0;&#x548C;&#x5220;&#x9664;&#x6570;&#x636E;&#x65F6;&#x4E0D;&#x4F1A;&#x5BFC;&#x81F4;&#x4E0D;&#x540C;&#x8868;&#x6570;&#x636E;&#x7684;&#x4E0D;&#x4E00;&#x81F4;&#x3002;&#x53C2;&#x8003;<a href="15.8.1.6.md">15.8.1.6 Innodb&#x5916;&#x952E;&#x7EA6;&#x675F;</a>&#x3002;</li>
+</ul>
+<p><strong>Innodb&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x7279;&#x6027;</strong></p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Support</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B-tree index</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Backup/point-in-time recovery (server&#x5C42;&#x5B9E;&#x73B0;&#xFF0C;&#x975E;&#x5F15;&#x64CE;&#x5C42;)</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Cluster database support</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Clustered indexes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Compressed data</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Data caches</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Encrypted data(server&#x5C42;&#x901A;&#x8FC7;&#x52A0;&#x5BC6;&#x51FD;&#x6570;&#x5B9E;&#x73B0;&#xFF0C;&#x4ECE;5.7&#x5F00;&#x59CB;&#xFF0C;&#x53EF;&#x4EE5;&#x5BF9;&#x51B7;&#x6570;&#x636E;(data-at-rest)&#x8FDB;&#x884C;&#x8868;&#x7A7A;&#x95F4;&#x52A0;&#x5BC6;)</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Foreign key support</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Full-text search indexes</td>
+<td>Yes(Innodb&#x4ECE;5.6&#x5F00;&#x59CB;&#x652F;&#x6301;&#x5168;&#x6587;&#x7D22;&#x5F15;)</td>
+</tr>
+<tr>
+<td>Geospatial data type support(&#x5730;&#x7406;&#x7A7A;&#x95F4;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x652F;&#x6301;)</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Geospatial indexing support</td>
+<td>Yes(Innodb&#x4ECE;5.7&#x5F00;&#x59CB;&#x652F;&#x6301;&#x5730;&#x7406;&#x7A7A;&#x95F4;&#x7D22;&#x5F15;)</td>
+</tr>
+<tr>
+<td>hash indexes</td>
+<td>No(InnoDB&#x5185;&#x90E8;&#x5229;&#x7528;&#x54C8;&#x5E0C;&#x7D22;&#x5F15;&#x6765;&#x5B9E;&#x73B0;&#x5176;&#x81EA;&#x9002;&#x5E94;&#x54C8;&#x5E0C;&#x7D22;&#x5F15;&#x529F;&#x80FD;)</td>
+</tr>
+<tr>
+<td>Index caches</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Locking granularity(&#x9501;&#x7C92;&#x5EA6;)</td>
+<td>Row</td>
+</tr>
+<tr>
+<td>MVCC</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Replication support(server&#x5C42;&#x5B9E;&#x73B0;)</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Storage limits</td>
+<td>64TB</td>
+</tr>
+<tr>
+<td>T-tree indexes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Transactions</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Update statistics for data dictionary(&#x66F4;&#x65B0;&#x6570;&#x636E;&#x5B57;&#x5178;&#x7684;&#x7EDF;&#x8BA1;&#x4FE1;&#x606F;)</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p><a href="../16/16.md">&#x7B2C;16&#x7AE0; MySQL&#x5B58;&#x50A8;&#x5F15;&#x64CE;</a>&#x6709;innodb&#x548C;&#x5176;&#x5B83;&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x7684;&#x7279;&#x6027;&#x6BD4;&#x8F83;&#x3002;</p>
+<h2 id="innodb&#x5F15;&#x64CE;&#x7684;&#x589E;&#x5F3A;&#x548C;&#x65B0;&#x7279;&#x6027;">Innodb&#x5F15;&#x64CE;&#x7684;&#x589E;&#x5F3A;&#x548C;&#x65B0;&#x7279;&#x6027;</h2>
+<p>&#x5173;&#x4E8E;Innodb&#x5F15;&#x64CE;&#x7684;&#x589E;&#x5F3A;&#x53CA;&#x65B0;&#x7279;&#x6027;&#x53C2;&#x8003;:</p>
+<ul>
+<li>&#x53C2;&#x8003;<a href="../1/1.4.md">1.4 MySQL 8.0&#x65B0;&#x7279;&#x6027;</a>&#xFF0C;Innodb&#x589E;&#x5F3A;&#x5217;&#x8868;&#x3002;</li>
+<li>&#x53C2;&#x8003;<a href="https://dev.mysql.com/doc/relnotes/mysql/8.0/en/" target="_blank">&#x53D1;&#x5E03;&#x8BF4;&#x660E;</a></li>
+</ul>
+<h2 id="&#x5176;&#x5B83;&#x7684;innodb&#x76F8;&#x5173;&#x7684;&#x4FE1;&#x606F;&#x53CA;&#x8D44;&#x6E90;">&#x5176;&#x5B83;&#x7684;Innodb&#x76F8;&#x5173;&#x7684;&#x4FE1;&#x606F;&#x53CA;&#x8D44;&#x6E90;</h2>
+<ul>
+<li>Innodb&#x7684;&#x5B9A;&#x4E49;&#x76F8;&#x5173;&#x53C2;&#x8003;<a href="https://dev.mysql.com/doc/refman/8.0/en/glossary.html" target="_blank">MySQL Glossary</a></li>
+<li>Innodb&#x7684;&#x8BBA;&#x575B;&#xFF0C;&#x53C2;&#x8003;<a href="http://forums.mysql.com/list.php?22" target="_blank">ySQL Forums::InnoDB</a></li>
+<li>InnoDB is published under the same GNU GPL License Version 2 (of June 1991) as MySQL. For more information on MySQL licensing, see <a href="http://www.mysql.com/company/legal/licensing/" target="_blank">http://www.mysql.com/company/legal/licensing/</a>.</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="15.html" class="navigation navigation-prev " aria-label="Previous page: 15 innodb存储引擎 ">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="15.1.1.html" class="navigation navigation-next " aria-label="Next page: 15.1.1 使用innodb引擎表的优势">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"15.1 innodb引擎的介绍","level":"1.5.1","depth":2,"next":{"title":"15.1.1 使用innodb引擎表的优势","level":"1.5.1.1","depth":3,"path":"15/15.1.1.md","ref":"15/15.1.1.md","articles":[]},"previous":{"title":"15 innodb存储引擎 ","level":"1.5","depth":1,"path":"15/15.md","ref":"15/15.md","articles":[{"title":"15.1 innodb引擎的介绍","level":"1.5.1","depth":2,"path":"15/15.1.md","ref":"15/15.1.md","articles":[{"title":"15.1.1 使用innodb引擎表的优势","level":"1.5.1.1","depth":3,"path":"15/15.1.1.md","ref":"15/15.1.1.md","articles":[]},{"title":"15.1.2 innodb引擎表的最佳实践","level":"1.5.1.2","depth":3,"path":"15/15.1.2.md","ref":"15/15.1.2.md","articles":[]},{"title":"15.1.3 innodb为默认存储引擎","level":"1.5.1.3","depth":3,"path":"15/15.1.3.md","ref":"15/15.1.3.md","articles":[]},{"title":"15.1.4 使用innodb进行基准测试","level":"1.5.1.4","depth":3,"path":"15/15.1.4.md","ref":"15/15.1.4.md","articles":[]}]},{"title":"15.2 innodb与ACID特性","level":"1.5.2","depth":2,"path":"15/15.2.md","ref":"15/15.2.md","articles":[]},{"title":"15.3 Innodb多版本","level":"1.5.3","depth":2,"path":"15/15.3.md","ref":"15/15.3.md","articles":[]},{"title":"15.4 Innodb架构","level":"1.5.4","depth":2,"path":"15/15.4.md","ref":"15/15.4.md","articles":[{"title":"15.4.1 Buffer Pool","level":"1.5.4.1","depth":3,"path":"15/15.4.1.md","ref":"15/15.4.1.md","articles":[]},{"title":"15.4.2 Change Buffer","level":"1.5.4.2","depth":3,"path":"15/15.4.2.md","ref":"15/15.4.2.md","articles":[]},{"title":"15.4.3 自适应哈希索引","level":"1.5.4.3","depth":3,"path":"15/15.4.3.md","ref":"15/15.4.3.md","articles":[]},{"title":"15.4.4 Redo Log Buffer","level":"1.5.4.4","depth":3,"path":"15/15.4.4.md","ref":"15/15.4.4.md","articles":[]},{"title":"15.4.5 系统表空间","level":"1.5.4.5","depth":3,"path":"15/15.4.5.md","ref":"15/15.4.5.md","articles":[]},{"title":"15.4.6 Doublewrite Buffer","level":"1.5.4.6","depth":3,"path":"15/15.4.6.md","ref":"15/15.4.6.md","articles":[]},{"title":"15.4.7 Undo Log","level":"1.5.4.7","depth":3,"path":"15/15.4.7.md","ref":"15/15.4.7.md","articles":[]},{"title":"15.4.8 独立表空间","level":"1.5.4.8","depth":3,"path":"15/15.4.8.md","ref":"15/15.4.8.md","articles":[]},{"title":"15.4.9 General Tablespaces","level":"1.5.4.9","depth":3,"path":"15/15.4.9.md","ref":"15/15.4.9.md","articles":[]},{"title":"15.4.10 Undo表空间","level":"1.5.4.10","depth":3,"path":"15/15.4.10.md","ref":"15/15.4.10.md","articles":[]},{"title":"15.4.11 临时表空间","level":"1.5.4.11","depth":3,"path":"15/15.4.11.md","ref":"15/15.4.11.md","articles":[]},{"title":"15.4.12 Redo Log","level":"1.5.4.12","depth":3,"path":"15/15.4.12.md","ref":"15/15.4.12.md","articles":[]}]},{"title":"15.5 Innodb锁和事物模型","level":"1.5.5","depth":2,"path":"15/15.5.md","ref":"15/15.5.md","articles":[]},{"title":"15.6 Innodb配置","level":"1.5.6","depth":2,"path":"15/15.6.md","ref":"15/15.6.md","articles":[]},{"title":"15.7 Innodb表空间","level":"1.5.7","depth":2,"path":"15/15.7.md","ref":"15/15.7.md","articles":[]},{"title":"15.8 Innodb表和索引","level":"1.5.8","depth":2,"path":"15/15.8.md","ref":"15/15.8.md","articles":[]},{"title":"15.9 Innodb压缩表和页","level":"1.5.9","depth":2,"path":"15/15.9.md","ref":"15/15.9.md","articles":[]},{"title":"15.10 Innodb行存储和格式","level":"1.5.10","depth":2,"path":"15/15.10.md","ref":"15/15.10.md","articles":[]},{"title":"15.11 Innodb磁盘I/O和文件空间管理","level":"1.5.11","depth":2,"path":"15/15.11.md","ref":"15/15.11.md","articles":[]},{"title":"15.12 Innodb在线DDL","level":"1.5.12","depth":2,"path":"15/15.12.md","ref":"15/15.12.md","articles":[]},{"title":"15.13 Innodb启动选项及系统参数","level":"1.5.13","depth":2,"path":"15/15.13.md","ref":"15/15.13.md","articles":[]},{"title":"15.14 Innodb INFORMATION_SCHEMA","level":"1.5.14","depth":2,"path":"15/15.14.md","ref":"15/15.14.md","articles":[]},{"title":"15.15 Innodb Performance Schema集成","level":"1.5.15","depth":2,"path":"15/15.15.md","ref":"15/15.15.md","articles":[]},{"title":"15.16 Innodb Monitors","level":"1.5.16","depth":2,"path":"15/15.16.md","ref":"15/15.16.md","articles":[]},{"title":"15.17 Innodb备份与恢复","level":"1.5.17","depth":2,"path":"15/15.17.md","ref":"15/15.17.md","articles":[]},{"title":"15.18 Innodb与复制","level":"1.5.18","depth":2,"path":"15/15.18.md","ref":"15/15.18.md","articles":[]},{"title":"15.19 Innodb memcached插件","level":"1.5.19","depth":2,"path":"15/15.19.md","ref":"15/15.19.md","articles":[]},{"title":"15.20 Innodb故障排除","level":"1.5.20","depth":2,"path":"15/15.20.md","ref":"15/15.20.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","livereload"],"pluginsConfig":{"toggle-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"15/15.1.md","mtime":"2018-07-03T12:01:16.064Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-13T11:08:12.133Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
